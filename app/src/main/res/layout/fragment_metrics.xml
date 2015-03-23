@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:weightSum="1">
+
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="36"
+		android:id="@+id/speedValue"
+		android:textSize="36pt"
+		android:textColor="@color/orange"
+		android:layout_alignParentTop="true"
+		android:layout_alignRight="@+id/distText"
+		android:layout_alignEnd="@+id/distText" />
+
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:textAppearance="?android:attr/textAppearanceLarge"
+		android:text="Speed"
+		android:id="@+id/speedText"
+		android:layout_weight="0.07"
+		android:padding="2dp"
+		android:layout_below="@+id/distValue"
+		android:layout_alignRight="@+id/distValue"
+		android:layout_alignEnd="@+id/distValue" />
+
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="5.2"
+		android:id="@+id/distValue"
+		android:textSize="36pt"
+		android:layout_marginRight="48dp"
+		android:layout_marginEnd="48dp"
+		android:layout_alignTop="@+id/speedValue"
+		android:layout_alignParentRight="true"
+		android:layout_alignParentEnd="true"
+		android:textColor="@color/orange" />
+
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:textAppearance="?android:attr/textAppearanceLarge"
+		android:text="Distance"
+		android:id="@+id/distText"
+		android:layout_weight="0.07"
+		android:padding="2dp"
+		android:layout_below="@+id/speedValue"
+		android:layout_toLeftOf="@+id/distValue"
+		android:layout_toStartOf="@+id/distValue"
+		android:layout_marginRight="60dp"
+		android:layout_marginEnd="60dp" />
+
+	<View
+		android:layout_width="fill_parent"
+		android:layout_height="1dp"
+		android:background="@color/gray"
+		android:layout_below="@+id/speedText"
+		android:layout_alignParentLeft="true"
+		android:layout_alignParentStart="true"
+		android:padding="2dp" />
+</RelativeLayout>
