@@ -1,5 +1,4 @@
-![SightCycle](assets/logo_transparent.png "Sight Cycle")
-===================
+![Sight Cycle](assets/logo_transparent.png "Sight Cycle")
 	March 2015
 	Hackster Hardware Weekend - Los Angeles
 
@@ -11,8 +10,8 @@
 -------------------------------------------------------------------------------
 Summary
 ---------------
-Companion Android application to the Sight Cycle bike light. Awarded Best Use of
-the M2X API.
+Companion Android application to the Sight Cycle bike light. Named AT&T Best
+M2X Application and AT&T Community Choice app.
 
 Features
 ---------------
@@ -24,6 +23,8 @@ Platforms
  - Android (min API 15)
 
 Related Links
+---------------
  - http://www.hackster.io/bike-hackers/sight-cycle-iot-bike-light
  - http://smart-or-bike.azurewebsites.net
- 
+ - http://developerboards.att.lithium.com/t5/AT-T-Developer-Program-Blogs/Event-Recap-AT-amp-T-Mobile-App-Hackathon-Los-Angeles/ba-p/39908
+ - http://humphreyzogart.com/hackathons-getting-into-tech-without-technical-skills/
