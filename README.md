@@ -1,6 +1,4 @@
 ![Sight Cycle](assets/logo_transparent.png "Sight Cycle")
-	March 2015
-	Hackster Hardware Weekend - Los Angeles
 
 	Alan Kha        akhahaha@gmail.com
 	Brian Cottrell	brian_cottrell@inbox.com
