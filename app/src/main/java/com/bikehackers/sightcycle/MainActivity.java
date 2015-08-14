@@ -195,7 +195,11 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
                 case 1:
                     return DashboardFragment.newInstance();
                 case 2:
-                    return MetricsFragment.newInstance();
+                    MetricsFragment metricsFragment = MetricsFragment.newInstance();
+                    locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+                    locationManager.requestLocationUpdates(
+                            LocationManager.GPS_PROVIDER, 5000, 10, metricsFragment);
+                    return metricsFragment;
             }
 
             return DashboardFragment.newInstance();
