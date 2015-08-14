@@ -56,6 +56,8 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
     double latitude;
     double longitude;
 
+    boolean isFallDetecting = true;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -193,7 +195,15 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
                 case 0:
                     return NavigationFragment.newInstance();
                 case 1:
-                    return DashboardFragment.newInstance();
+                    DashboardFragment dashboardFragment = DashboardFragment.newInstance();
+                    dashboardFragment.registerFallDetectionSwitchListener(new DashboardFragment.FallDetectionSwitchListener() {
+                        @Override
+                        public void onFallDetectionSwitch(boolean state) {
+                            isFallDetecting = state;
+                        }
+                    });
+
+                    return dashboardFragment;
                 case 2:
                     MetricsFragment metricsFragment = MetricsFragment.newInstance();
                     locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
@@ -276,7 +286,9 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
     // Fall Listener
     @Override
     public void onFallDetected() {
-        System.out.println("Fall detected");
+        if (!isFallDetecting) {
+            return;
+        }
 
         updateLocation();
 

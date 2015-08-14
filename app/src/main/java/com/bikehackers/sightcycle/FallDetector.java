@@ -17,7 +17,7 @@ import java.util.Queue;
 public class FallDetector implements SensorEventListener {
     // Fall calibration values
     final static double SIGMA = 0.5;
-    final static double MIN_NORM_ACCEL_THRESHOLD = 20;
+    final static double MIN_NORM_ACCEL_THRESHOLD = 30;
     final static double MIN_VERT_ACCEL_THRESHOLD = 5;
     final static double MIN_ZRC_INDEX = 5;
 
@@ -26,6 +26,8 @@ public class FallDetector implements SensorEventListener {
     final static int STATE_SITTING = 1;
     final static int STATE_STANDING = 2;
     final static int STATE_WALKING = 3;
+
+    boolean initialized = false;
 
     int prevState;
 
@@ -102,7 +104,7 @@ public class FallDetector implements SensorEventListener {
 
             // Add to acceleration history, update zrcIndex
             // Delete earliest entry if necessary
-            if (zrcHistory.size() == 50) {
+            if (zrcHistory.size() == ACCELERATION_HISTORY_SIZE) {
                 zrcIndex -= zrcHistory.poll();
             }
             zrcHistory.add(zrcScore);
@@ -117,9 +119,11 @@ public class FallDetector implements SensorEventListener {
             }
 
             // Determine if state has changed
-            if (currState != prevState && currState == STATE_FALLING) {
+            if (currState != prevState && currState == STATE_FALLING && initialized) {
                 // Notify FallListener
                 listener.onFallDetected();
+            } else {
+                initialized = true; // Captures the first fall
             }
 
             prevState = currState;

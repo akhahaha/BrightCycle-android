@@ -5,6 +5,8 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CompoundButton;
+import android.widget.Switch;
 
 /**
  * Dashboard fragment.
@@ -28,6 +30,30 @@ public class DashboardFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_dashboard, container, false);
+
+        Switch fdSwitch = (Switch) rootView.findViewById(R.id.fdSwitch);
+        fdSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (listener != null) {
+                    listener.onFallDetectionSwitch(isChecked);
+                }
+            }
+        });
+
         return rootView;
+    }
+
+    FallDetectionSwitchListener listener;
+
+    public interface FallDetectionSwitchListener {
+        void onFallDetectionSwitch(boolean state);
+    }
+
+    public void registerFallDetectionSwitchListener(FallDetectionSwitchListener listener) {
+        this.listener = listener;
+    }
+
+    public void unregisterFallDetectionSwitchListener() {
+        this.listener = null;
     }
 }
