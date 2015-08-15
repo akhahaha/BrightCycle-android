@@ -2,37 +2,36 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              android:orientation="vertical">
+              android:orientation="vertical"
+              android:padding="10dp">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="10dp">
+        android:layout_height="wrap_content">
 
         <TextView
             android:id="@+id/fdLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Fall Detection"
-            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_alignParentStart="true"/>
+            android:text="Fall Detection"
+            android:textAppearance="?android:attr/textAppearanceMedium"/>
 
         <Switch
             android:id="@+id/fdSwitch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:checked="true"
+            android:layout_alignParentEnd="true"
             android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"/>
+            android:layout_gravity="end"
+            android:checked="true"/>
     </RelativeLayout>
 
     <TextView
         android:id="@+id/textViewLights"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="10dp"
         android:text="Lights"
         android:textSize="36dp"/>
 
@@ -79,7 +78,6 @@
         android:id="@+id/textViewFinder"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="10dp"
         android:text="Finder"
         android:textSize="36dp"/>
 </LinearLayout>

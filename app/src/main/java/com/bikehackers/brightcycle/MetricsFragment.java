@@ -16,6 +16,7 @@ import android.widget.TextView;
 public class MetricsFragment extends Fragment implements LocationListener {
     View rootView;
     TextView speedValueView;
+    TextView distValueView;
 
     /**
      * Returns a new instance of this fragment/
@@ -34,18 +35,22 @@ public class MetricsFragment extends Fragment implements LocationListener {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.fragment_metrics, container, false);
-        speedValueView = ((TextView) rootView.findViewById(R.id.speedValue));
+        speedValueView = (TextView) rootView.findViewById(R.id.speedValue);
+        distValueView = (TextView) rootView.findViewById(R.id.distValue);
+        speedValueView.setText("0.0");
+        distValueView.setText("0.0");
 
         return rootView;
     }
 
     @Override
     public void onLocationChanged(Location location) {
-        if (location.hasSpeed()) {
+        if (location.hasSpeed() && speedValueView != null) {
             speedValueView.setText(Float.toString(location.getSpeed()));
         }
 
         // TODO If no speed, calculate average speed
+        // TODO Calculate distance
     }
 
     @Override
