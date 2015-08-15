@@ -47,8 +47,10 @@ public class NavigationFragment extends Fragment {
         mapView.onCreate(savedInstanceState);
 
         map = mapView.getMap();
-        map.getUiSettings().setMyLocationButtonEnabled(false);
+        map.getUiSettings().setCompassEnabled(true);
+        map.getUiSettings().setMyLocationButtonEnabled(true);
         map.setMyLocationEnabled(true);
+        // TODO Disable transit layer (currently not possible with API)
 
         locationManager = (LocationManager) getActivity().getSystemService(Context
                 .LOCATION_SERVICE);

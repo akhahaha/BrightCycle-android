@@ -1,6 +1,7 @@
 package com.bikehackers.sightcycle;
 
 import android.content.Context;
+import android.content.Intent;
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
 import android.location.Location;
@@ -22,6 +23,7 @@ import com.att.m2x.android.listeners.ResponseListener;
 import com.att.m2x.android.main.M2XAPI;
 import com.att.m2x.android.model.Device;
 import com.att.m2x.android.network.ApiV2Response;
+import com.bikehackers.sightcycle.ble.DeviceScanActivity;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -34,6 +36,8 @@ import java.util.TimeZone;
 
 public class MainActivity extends AppCompatActivity implements ActionBar.TabListener,
         ResponseListener, LocationListener, FallDetector.FallListener {
+    private final static String M2X_DEVICE_ID = "933e760c444999d84ca9c7980bc5831c";
+
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
      * fragments for each of the sections. We use a
@@ -115,7 +119,7 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
                     "  \"elevation\": 5 }");
 
             // Post update location
-            Device.updateDeviceLocation(this, locJSON, "933e760c444999d84ca9c7980bc5831c", this);
+            Device.updateDeviceLocation(this, locJSON, M2X_DEVICE_ID, this);
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -157,6 +161,8 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
+        } else if (id == R.id.action_ble) {
+            startActivity(new Intent(this, DeviceScanActivity.class));
         }
 
         return super.onOptionsItemSelected(item);
