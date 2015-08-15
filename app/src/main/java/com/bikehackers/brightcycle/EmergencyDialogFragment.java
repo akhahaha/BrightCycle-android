@@ -1,4 +1,4 @@
-package com.bikehackers.sightcycle;
+package com.bikehackers.brightcycle;
 
 import android.app.AlertDialog;
 import android.app.Dialog;

@@ -1,4 +1,4 @@
-package com.bikehackers.sightcycle;
+package com.bikehackers.brightcycle;
 
 import android.content.Context;
 import android.content.Intent;
@@ -23,7 +23,7 @@ import com.att.m2x.android.listeners.ResponseListener;
 import com.att.m2x.android.main.M2XAPI;
 import com.att.m2x.android.model.Device;
 import com.att.m2x.android.network.ApiV2Response;
-import com.bikehackers.sightcycle.ble.DeviceScanActivity;
+import com.bikehackers.brightcycle.ble.DeviceScanActivity;
 
 import org.json.JSONArray;
 import org.json.JSONException;

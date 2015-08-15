@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.bikehackers.sightcycle.ble;
+package com.bikehackers.brightcycle.ble;
 
 import android.app.ActionBar;
 import android.app.Activity;
@@ -37,7 +37,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.bikehackers.sightcycle.R;
+import com.bikehackers.brightcycle.R;
 
 import java.util.ArrayList;
 

@@ -1,4 +1,4 @@
-package com.bikehackers.sightcycle;
+package com.bikehackers.brightcycle;
 
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;

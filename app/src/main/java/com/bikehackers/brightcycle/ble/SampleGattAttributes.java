@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.bikehackers.sightcycle.ble;
+package com.bikehackers.brightcycle.ble;
 
 import java.util.HashMap;
 
