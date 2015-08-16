@@ -40,38 +40,27 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/textViewAuto"
+        <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingBottom="10dp"
-            android:paddingLeft="20dp"
-            android:paddingRight="10dp"
-            android:paddingTop="10dp"
             android:text="Auto"
-            android:textSize="24dp"/>
+            android:id="@+id/autoButton"
+            android:checked="true"/>
 
-        <TextView
-            android:id="@+id/textViewLightOn"
+        <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingBottom="10dp"
-            android:paddingLeft="20dp"
-            android:paddingRight="10dp"
-            android:paddingTop="10dp"
             android:text="On"
-            android:textSize="24dp"/>
+            android:id="@+id/onButton"
+            android:checked="false"/>
 
-        <TextView
-            android:id="@+id/textViewLightOff"
+        <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingBottom="10dp"
-            android:paddingLeft="20dp"
-            android:paddingRight="10dp"
-            android:paddingTop="10dp"
             android:text="Off"
-            android:textSize="24dp"/>
+            android:id="@+id/offButton"
+            android:checked="false"/>
+
     </LinearLayout>
 
     <TextView
