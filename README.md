@@ -19,3 +19,10 @@ Features
 Platforms
 ---------------
  - Android (min API 15)
+
+Related Links
+---------------
+ - http://www.hackster.io/bike-hackers/sight-cycle-iot-bike-light
+ - http://smart-or-bike.azurewebsites.net
+ - http://developerboards.att.lithium.com/t5/AT-T-Developer-Program-Blogs/Event-Recap-AT-amp-T-Mobile-App-Hackathon-Los-Angeles/ba-p/39908
+ - http://humphreyzogart.com/hackathons-getting-into-tech-without-technical-skills/
